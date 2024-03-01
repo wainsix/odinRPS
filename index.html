@@ -27,7 +27,36 @@ pelien määrä:
 </div>
 
         <script>
-            
+            function getComputerChoice(){
+                choice = (Math.floor(Math.random() * 3))
+                if (choice == 0){
+                    return "rock";
+                } else if (choice == 1){
+                    return "paper";
+                } else {
+                    return "scissors"
+                }
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection == computerSelection){
+                    return("DRAW")
+                } else if (playerSelection == "rock" && computerSelection == "paper"){
+                    return("Computer WINS")
+                } else if (playerSelection == "rock" && computerSelection == "scissors"){
+                    return("Player WINS")
+                } else if (playerSelection == "paper" && computerSelection == "rock"){
+                    return("Player wins") 
+                } else if (playerSelection == "paper" && computerSelection == "scissors"){
+                    return("Computer wins") 
+                } else if (playerSelection == "scissors" && computerSelection == "rock") {
+                    return("Computer wins")
+                } else  {
+                    return("Player wins")
+            }}
+            const playerSelection = "rock";
+            const computerSelection = getComputerChoice();
+            console.log(playRound(playerSelection, computerSelection));
         </script>
     </body>
 </html>
