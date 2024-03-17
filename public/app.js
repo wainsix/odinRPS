@@ -9,8 +9,8 @@ function getComputerChoice() {
   }
 }
 
-function getPlayerSelection() {
-  let num = parseInt(prompt("0 on kivi 1 on paperi ja 2 on sakset"));
+function getPlayerSelection(i) {
+  let num = parseInt(i);
   if (num == 0) {
     return "KIVI";
   } else if (num == 1) {
