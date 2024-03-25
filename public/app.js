@@ -22,7 +22,14 @@ function getPlayerSelection(i) {
 
 function playRound(playerSelection, computerSelection) {
   document.getElementById("mid").innerHTML =
-    "valitsit: " + playerSelection + " ja kone valitsi: " + computerSelection;
+    "Pelattiin " +
+    "<br>" +
+    "<br>" +
+    playerSelection +
+    "<br>" +
+    " - vastaan - " +
+    "<br>" +
+    computerSelection;
   oikea = document.getElementById("right");
   oikea.removeAttribute("class");
 

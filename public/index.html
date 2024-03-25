@@ -13,27 +13,25 @@
     <div class="container">
       <div id="left">
         <p>
-          <button
+          <div id="btn"
             onclick="playRound(getPlayerSelection(0),getComputerChoice())"
           >
             Kivi
-          </button>
-          <button
+        </div>
+          <div id="btn"
             onclick="playRound(getPlayerSelection(1),getComputerChoice())"
           >
             Paperi
-          </button>
-          <button
+      </div>
+          <div id="btn"
             onclick="playRound(getPlayerSelection(2),getComputerChoice())"
           >
             Sakset
-          </button>
+    </div>
         </p>
       </div>
-      <div id="mid">
-        <p>Konsolissa pelataan rps peliä</p>
-      </div>
-      <div id="right">pelien määrä:</div>
+      <div id="mid">Konsolissa pelataan rps peliä</div>
+      <div id="right">Tulos</div>
     </div>
 
     <script src="app.js" async defer></script>
