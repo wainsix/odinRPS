@@ -31,3 +31,8 @@ body {
   background-color: red;
   color: bisque;
 }
+
+.gameEnd {
+  background-color: goldenrod;
+  color: bisque;
+}

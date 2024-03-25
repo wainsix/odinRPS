@@ -1,3 +1,6 @@
+let games = 1;
+let wins = 0;
+
 function getComputerChoice() {
   choice = Math.floor(Math.random() * 3);
   if (choice == 0) {
@@ -22,7 +25,8 @@ function getPlayerSelection(i) {
 
 function playRound(playerSelection, computerSelection) {
   document.getElementById("mid").innerHTML =
-    "Pelattiin " +
+    "Peli " +
+    games +
     "<br>" +
     "<br>" +
     playerSelection +
@@ -32,28 +36,42 @@ function playRound(playerSelection, computerSelection) {
     computerSelection;
   oikea = document.getElementById("right");
   oikea.removeAttribute("class");
-
-  if (playerSelection == computerSelection) {
-    oikea.innerHTML = "TASAPELI";
-    oikea.classList.add("draw");
-  } else if (playerSelection == "KIVI" && computerSelection == "PAPERI") {
-    oikea.innerHTML = "KONE VOITTI";
-    oikea.classList.add("computerWin");
-  } else if (playerSelection == "KIVI" && computerSelection == "SAKSET") {
-    oikea.innerHTML = "VOITIT!";
-    oikea.classList.add("playerWin");
-  } else if (playerSelection == "PAPERI" && computerSelection == "KIVI") {
-    oikea.innerHTML = "VOITIT!";
-    oikea.classList.add("playerWin");
-  } else if (playerSelection == "PAPERI" && computerSelection == "SAKSET") {
-    oikea.innerHTML = "KONE VOITTI";
-    oikea.classList.add("computerWin");
-  } else if (playerSelection == "SAKSET" && computerSelection == "KIVI") {
-    oikea.innerHTML = "KONE VOITTI";
-    oikea.classList.add("computerWin");
+  if (games < 5) {
+    if (playerSelection == computerSelection) {
+      oikea.innerHTML = "TASAPELI";
+      oikea.classList.add("draw");
+      games++;
+    } else if (playerSelection == "KIVI" && computerSelection == "PAPERI") {
+      oikea.innerHTML = "KONE VOITTI";
+      oikea.classList.add("computerWin");
+      games++;
+    } else if (playerSelection == "KIVI" && computerSelection == "SAKSET") {
+      oikea.innerHTML = "VOITIT!";
+      oikea.classList.add("playerWin");
+      games++;
+      wins++;
+    } else if (playerSelection == "PAPERI" && computerSelection == "KIVI") {
+      oikea.innerHTML = "VOITIT!";
+      oikea.classList.add("playerWin");
+      games++;
+      wins++;
+    } else if (playerSelection == "PAPERI" && computerSelection == "SAKSET") {
+      oikea.innerHTML = "KONE VOITTI";
+      oikea.classList.add("computerWin");
+      games++;
+    } else if (playerSelection == "SAKSET" && computerSelection == "KIVI") {
+      oikea.innerHTML = "KONE VOITTI";
+      oikea.classList.add("computerWin");
+      games++;
+    } else {
+      oikea.innerHTML = "VOITIT!";
+      oikea.classList.add("playerWin");
+      games++;
+      wins++;
+    }
   } else {
-    oikea.innerHTML = "VOITIT!";
-    oikea.classList.add("playerWin");
+    oikea.innerHTML = "Peli loppui ja pisteesi olivat: " + wins;
+    oikea.classList.add("gameEnd");
   }
 }
 const playerSelection = getPlayerSelection();
